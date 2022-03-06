@@ -1,0 +1,43 @@
+{
+    "name": "doge-rewrite-vscoee",
+    "publisher": "4984",
+    "displayName": "doge-rewrite-vscode",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "directory": ".",
+        "url": "https://github.com/shawsumma/doge-rewrite-vscode"
+    },
+    "main": "client/doge.js",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "doge-rewrite",
+                "aliases": [
+                    "doge-rewrite",
+                    "doge"
+                ],
+                "extensions": [
+                    ".doge"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "doge-rewrite",
+                "scopeName": "source.doge",
+                "path": "./syntaxes/doge.tmLanguage.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:doge-rewrite"
+    ]
+}

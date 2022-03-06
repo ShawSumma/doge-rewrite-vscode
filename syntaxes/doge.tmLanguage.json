@@ -1,0 +1,63 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "doge-rewrite",
+    "scopeName": "source.doge",
+    "patterns": [
+        {"include": "#comments"},
+        {"include": "#keywords"},
+        {"include": "#operators"},
+        {"include": "#strings"},
+        {"include": "#rules"},
+        {"include": "#words"}
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.doge-rewrite",
+                    "match": "\\b(rule)\\b|% *[a-z]+"
+                }
+            ]
+        },
+        "rules": {
+            "patterns": [
+                {
+                    "name": "function.doge-rewrite",
+                    "match": "(?<=rule +)[^ \\t\\r\\n\\(\\)\\{\\}:]+\b"
+                }
+            ]
+        },
+        "words": {
+            "patterns": [
+                {
+                    "name": "variable.doge-rewrite",
+                    "match": "[^ \\t\\r\\n\\(\\)\\{\\}:]+"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.doge-rewrite",
+                    "match": "//.*\\n"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.doge-rewrite",
+                    "match": "(->|<->|<-|=>|<=>|<=)"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.doge-rewrite",
+                    "match": "\"(\\\\\"|[^\"])*\""
+                }
+            ]
+        }
+    }
+}
